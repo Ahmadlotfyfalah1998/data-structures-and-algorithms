@@ -41,15 +41,82 @@ class LinkedList:
           current=current.next
         
         string+='None'  
-        return string   
-              
+        return string 
+    
+      
+    def append(self,value):
+        new = Node(value,None)
+        if self.head is None:
+            self.head = new
+        else:
+            current = self.head
+            while current.next :
+                current= current.next
+            current.next = new   
+
+
+    def Insert_Before(self,beforeit,new):
+        new_node=Node(new)
+        current= self.head
+        if self.head.value == beforeit:
+          
+            new_node.next = self.head
+            self.head = new_node
+            return
+        current = self.head
+        
+        
+        
+        while current.next :
+            if current.next.value == beforeit:
+               
+                new_node.next = current.next
+                current.next = new_node
+                return
+            current = current.next
+      
+        
+
+        
+    def insert_after(self,afterit,new):
+        new_node=Node(new)
+        current= self.head
+        while current:
+            if current.value == afterit:
+                new_node.next=current.next
+                current.next=  new_node
+                
+                return
+            current = current.next   
+        
+        
+        
         
 if __name__ == '__main__':
-   ahmad=Node('ahmad')
-   newahmad=Node('newahmad',ahmad)
+   ahmad=Node('2')
+   newahmad=Node('1',ahmad)
   
    list=LinkedList(newahmad)
    
-   list.insert('therdahmad')
-   list.traverse()
-   print(list.to_string())
+   list.insert('0')
+
+   list.append("3")
+   list.Insert_Before("1","66")
+   list.insert_after("2","33")
+   print(list.to_string())   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   

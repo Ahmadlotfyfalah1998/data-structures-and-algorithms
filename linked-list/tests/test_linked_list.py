@@ -55,3 +55,56 @@ def test_existed_values():
      actual=new_list.to_string()
      excepted="{third} -> {second} -> {first} -> None"
      assert excepted==actual
+     
+def test_append():
+    new_list = LinkedList()
+    new_list.append("first")
+    new_list.append("second")
+    new_list.append("third")
+
+    actual=new_list.to_string()
+    excepted="{first} -> {second} -> {third} -> None"
+    assert excepted==actual
+      
+      
+def test_insert_before():
+    new_list = LinkedList()
+    new_list.append("first")
+    new_list.append("second")
+    new_list.append("third")
+    new_list.Insert_Before("second","beforeSec")
+    actual=new_list.to_string()
+    expected="{first} -> {beforeSec} -> {second} -> {third} -> None"
+    assert expected==actual
+    
+    
+def test_insert_before_first():
+    new_list = LinkedList()
+    new_list.append("first")
+    new_list.append("second")
+    new_list.append("third")
+    new_list.Insert_Before("first","beforefirst")
+    actual=new_list.to_string()
+    expected="{beforefirst} -> {first} -> {second} -> {third} -> None"
+    assert expected==actual
+    
+    
+def test_insert_after():
+    new_list = LinkedList()
+    new_list.append("first")
+    new_list.append("second")
+    new_list.append("third")
+    new_list.insert_after("second","afterSecound")
+    actual=new_list.to_string() 
+    expected="{first} -> {second} -> {afterSecound} -> {third} -> None"
+    assert expected==actual
+    
+def test_insert_after_last():
+    new_list = LinkedList()
+    new_list.append("first")
+    new_list.append("second")
+    new_list.append("third")
+    new_list.insert_after("third","afterthird")
+    actual=new_list.to_string()
+    expected="{first} -> {second} -> {third} -> {afterthird} -> None"
+    assert expected==actual
