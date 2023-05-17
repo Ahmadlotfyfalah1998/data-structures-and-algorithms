@@ -1,25 +1,31 @@
 # Challenge Title
 Linked List Implementation
 ## Whiteboard Process
-![Alt text](include%20code%205.jpg)
-![Alt text](insert%20code%205.jpg)
-
-
+![Alt text](code%206%20append.jpg)
+![Alt text](code%206%20insert%20before.jpg)
+![Alt text](code%206%20insert%20after.jpg)
 
 
 
 ## Approach & Efficiency
-insert :
-the function will create a new node
-the function will give he new node next of current node
-the function will set the new node as a head
-big O:O(1)
-include :
-the function will start from head
-the function will loop over a linked list using while loop
-if it find a value it will return true
-if a nude become None and the value not founded  it will return false
-big O:O(n)
+#### append
+the function will create a new node with parameter value<br>
+the function will check the last existed next<br>
+the function will insert the new node after it<br>
+big O:O(n)<br>
+#### insert before
+the function will create a new node with parameter value<br>
+the function will loop over the linked list and check for next of the current value<br>
+once it find the next value equal the parameter first value it will insert the value before it<br>
+it will set the next of current value equal to new node and the next of new one to the value we need to insert before it<br>
+big O:O(n)<br>
+#### insert after
+the function will create a new node with parameter value<br>
+the function will loop over the linked list and check for current value
+once it find the current value equal the parameter it will set new node after it<br>
+it will set the  new value as next for current value and set the next for new one the next of current
+before it<br>
+big O:O(n)<br>
 ## Solution
  python linked-list/linked_list.py
 ## tests
