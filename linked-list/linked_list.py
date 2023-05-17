@@ -64,9 +64,6 @@ class LinkedList:
             self.head = new_node
             return
         current = self.head
-        
-        
-        
         while current.next :
             if current.next.value == beforeit:
                
