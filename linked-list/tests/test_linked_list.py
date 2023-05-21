@@ -108,3 +108,69 @@ def test_insert_after_last():
     actual=new_list.to_string()
     expected="{first} -> {second} -> {third} -> {afterthird} -> None"
     assert expected==actual
+
+
+def test_kth_lastone():
+    new_list = LinkedList()
+    new_list.append("first")
+    new_list.append("second")
+    new_list.append("third")
+    actual=new_list.linked_list_kth(0)
+    expected="third"
+    assert expected==actual
+    
+def test_kth():
+    new_list = LinkedList()
+    new_list.append("first")
+    new_list.append("second")
+    new_list.append("third")
+    actual=new_list.linked_list_kth(1)
+    expected="second"
+    assert expected==actual
+    
+def test_kth_head():
+    new_list = LinkedList()
+    new_list.append("first")
+    new_list.append("second")
+    new_list.append("third")
+    actual=new_list.linked_list_kth(2)
+    expected="first"
+    assert expected==actual   
+    
+
+def test_kth_grater():
+    new_list = LinkedList()
+    new_list.append("first")
+    new_list.append("second")
+    new_list.append("third")
+
+    with pytest.raises(TypeError, match='this number is larger than the linked list length'):
+        new_list.linked_list_kth(7)
+        
+def test_kth_same():
+    new_list = LinkedList()
+    new_list.append("first")
+    new_list.append("second")
+    new_list.append("third")
+
+    with pytest.raises(TypeError, match='this number is larger than the linked list length'):
+        new_list.linked_list_kth(3)
+        
+def test_kth_nigative():
+    new_list = LinkedList()
+    new_list.append("first")
+    new_list.append("second")
+    new_list.append("third")
+
+    with pytest.raises(TypeError, match='Negative value not accepted'):
+        new_list.linked_list_kth(-3)
+        
+        
+        
+def test_kth_one_element():
+    new_list = LinkedList()
+    new_list.append("first")
+    
+    actual=new_list.linked_list_kth(0)
+    expected="first"
+    assert expected==actual
