@@ -6,3 +6,4 @@
 |code challenge 3     |[link 3](./array-binary-search/array-binary-search.md) |
 |code challenge 5     |[link 5](./linked-list/linked-list.md)|
 |code challenge 6     |[link 6](./linked-list/linked-list.md)|
+|code challenge 7     |[link7](./linked-list/kth.md)|

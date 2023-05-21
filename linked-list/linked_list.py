@@ -86,7 +86,26 @@ class LinkedList:
                 return
             current = current.next   
         
-        
+    def linked_list_kth(self, value):
+        if value >=0:
+             current=self.head
+             len=0
+             while current:
+              len+=1
+              current=current.next
+             if value >= len:
+               raise TypeError("this number is larger than the linked list length")
+             else:
+               index=len-value-1
+               counter=0
+               newcurrent=self.head
+               while counter<index:
+                   counter+=1
+                   newcurrent=newcurrent.next
+               return newcurrent.value
+        else:
+            raise TypeError("Negative value not accepted")            
+                 
         
         
 if __name__ == '__main__':
@@ -98,11 +117,11 @@ if __name__ == '__main__':
    list.insert('0')
 
    list.append("3")
-   list.Insert_Before("1","66")
-   list.insert_after("2","33")
+   list.Insert_Before("1","0.5")
+   list.insert_after("2","2.5")
    print(list.to_string())   
    
-   
+   print(list.linked_list_kth(7))
    
    
    
