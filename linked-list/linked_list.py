@@ -106,22 +106,36 @@ class LinkedList:
         else:
             raise TypeError("Negative value not accepted")            
                  
-        
+    def reverse(self,ll):
+        current=ll.head
+        newlist=[]
+        revered_list=[]
+        while current:
+         newlist.append(current.value)   
+         current=current.next
+        length=len(newlist) 
+        while length>0:
+            revered_list.append(newlist[length-1])
+            length=length-1
+        if newlist==revered_list:
+         return True
+        else :
+         return False
         
 if __name__ == '__main__':
-   ahmad=Node('2')
+   ahmad=Node('15')
    newahmad=Node('1',ahmad)
   
    list=LinkedList(newahmad)
    
-   list.insert('0')
+   list.insert('3')
 
    list.append("3")
-   list.Insert_Before("1","0.5")
-   list.insert_after("2","2.5")
-   print(list.to_string())   
+   list.Insert_Before("1","15")
    
-   print(list.linked_list_kth(7))
+   print(list.to_string())   
+   print(list.reverse(list))
+#    print(list.linked_list_kth(7))
    
    
    
