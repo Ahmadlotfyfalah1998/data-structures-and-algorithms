@@ -8,3 +8,4 @@
 |code challenge 6     |[link 6](./linked-list/linked-list.md)|
 |code challenge 7     |[link7](./linked-list/kth.md)|
 |code challenge 8     |[link8](./linked-list-zip/linked_list_zip.md)|
+|code challenge 11    |[link11](./stack-queue-pseudo/stack_queue_pseudo.md)  |
