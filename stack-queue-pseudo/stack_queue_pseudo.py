@@ -105,7 +105,9 @@ class Peudo:
                temp=temp.next
            temp=self.first.top    
        
-       
+    '''
+     print the string for nodes
+    '''  
        
     def to_string(self):
         current=self.first.top
