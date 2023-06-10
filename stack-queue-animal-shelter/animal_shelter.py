@@ -1,4 +1,7 @@
 class Node :
+    """
+    NODE CLASS
+    """
     def __init__(self,value=None,next=None):
         self.value= value 
         self.next =next 
@@ -6,6 +9,9 @@ class Node :
         return f'{self.value}'    
         
 class Queue:
+    """
+    queue class
+    """
     def __init__(self):
         self.front = None
         self.back = None 
@@ -59,6 +65,9 @@ class Queue:
         string+='None'  
         return string       
 class Animal:
+    """
+    animal class , it have a name and species for each animal 
+    """
     def __init__(self,name,species):
         self.name=name
         self.species=species    
@@ -66,21 +75,34 @@ class Animal:
         return f'animal name is {{{self.name}}} and species is {{{self.species}}}'
      
 class Animal_shelter():
+    """
+    shelter class it have a two queue one for cats and other one to
+    dogs 
+    and it have some methods like enqueue and dequeue  
+    """
     def __init__(self):
         self.cat_=Queue()
         self.dog_=Queue()
          
     def enqueue(self,animal):
+       """
+        enqueue method , it will check for animal species and it will enqueue it to the cats queue if its 
+        cat and its will enqueue it to the dogs queue if its dog  
+       """
        if not isinstance(animal,Animal):
            return "plz instance"
        elif animal.species != 'cat' or animal.species != "dog":
-           return "should be cat or dog only"
+           return "the animal should be cat or dog only"
        elif animal.species == 'cat':
            self.cat_.enqueue(Node(animal))
        elif animal.species == 'dog':
            self.dog_.enqueue(Node(animal))
             
     def dequeue(self,pref):
+        """
+        dequeue method , it take a pref as parameter and if the pref = dog it will dequeue from dogs queue 
+        and if pref = cat it will dequeue from cats queue
+        """ 
         if pref != 'cat' or pref != 'dog':
             return ' you can dequeue cat or dog only ' 
         elif pref == 'cat':
