@@ -187,6 +187,38 @@ class Tree:
           output.append(root.value) 
        _helper(self.root)      
        return output
+   
+   
+   
+   
+   def max_tree(self):
+      """
+       this method is a method for the tree class it return the maximum 
+       value in te tree 
+      """
+       
+      if self.root is None:
+           return "no max :the tree is empty"  
+      else:       
+       output=[]   
+       def _helper(root):
+        
+         if root.left:
+             _helper(root.left)
+            
+         output.append(root.value)    
+         if root.right:
+             _helper(root.right)
+       _helper(self.root)
+       
+       max_tnode=output[0]
+       for x in output:
+           if x>max_tnode:
+               max_tnode=x
+       return max_tnode
+              
+  
+       
 class Binary_search(Tree):
     
     
@@ -219,7 +251,9 @@ class Binary_search(Tree):
          it return true if the node in the tree and false if it not 
        
         """
-        if value in self.pre_order():
+        if self.pre_order()==None:
+            return 'the tree is empty'
+        elif value in self.pre_order():
             return True
         else:
             return False
@@ -237,13 +271,13 @@ if __name__=='__main__':
  print(treee.post_order())
 
  binary=Binary_search()
- binary.add(4)
+ binary.add(20)
  binary.add(2)
  binary.add(5)
- binary.add(1)
+ binary.add(15)
  binary.add(3)
- binary.add(7)
- binary.add(8)
+ binary.add(2)
+ binary.add(4)
  print(binary.in_order())
  print(binary.contains(3))
  print(binary.contains(7))
@@ -251,3 +285,5 @@ if __name__=='__main__':
  print(binary.contains(10))
  print(binary.contains(300))
  print(binary.contains(8))
+ 
+ print(binary.max_tree())

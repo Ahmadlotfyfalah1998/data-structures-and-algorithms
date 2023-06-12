@@ -97,3 +97,26 @@ def test_contain_false():
    actual=binary.contains(30)
    expected=False
    assert actual==expected
+   
+   
+   
+def test_max_tree():
+   treee = Tree()
+   treee.root=Tnode(1)
+   treee.root.left=Tnode(4)
+   treee.root.right=Tnode(6)
+   treee.root.left.left=Tnode(2)
+   treee.root.left.right=Tnode(9)
+   treee.root.right.left=Tnode(12)
+   treee.root.right.right=Tnode(0) 
+   actual=treee.max_tree()
+   expected=12
+   assert actual==expected
+   
+   
+def test_max_tree_empty():
+   treee = Tree()
+ 
+   actual=treee.max_tree()
+   expected="no max :the tree is empty"
+   assert actual==expected

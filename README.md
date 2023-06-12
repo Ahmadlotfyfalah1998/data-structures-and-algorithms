@@ -11,3 +11,4 @@
 |code challenge 11    |[link11](./stack-queue-pseudo/stack_queue_pseudo.md)  |
 |code challenge 12    |[link12](./stack-queue-animal-shelter/animal_shelter.md)|
 |code challenge 15    |[link15](./trees/trees.md)|
+|code challenge 16    |[link16](./trees/tree_max.md)|
