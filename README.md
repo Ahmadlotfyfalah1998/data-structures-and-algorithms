@@ -10,5 +10,6 @@
 |code challenge 8     |[link8](./linked-list-zip/linked_list_zip.md)|
 |code challenge 11    |[link11](./stack-queue-pseudo/stack_queue_pseudo.md)  |
 |code challenge 12    |[link12](./stack-queue-animal-shelter/animal_shelter.md)|
+|code challenge 13    |[link13](./brackets_stack/brackets.md)|
 |code challenge 15    |[link15](./trees/trees.md)|
 |code challenge 16    |[link16](./trees/tree_max.md)|
