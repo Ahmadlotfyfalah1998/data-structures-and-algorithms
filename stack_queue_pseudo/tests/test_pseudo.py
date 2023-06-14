@@ -1,5 +1,5 @@
 import pytest 
-from stack_queue_pseudo import Node,Stack,Peudo
+from stack_queue_pseudo.stack_queue_pseudo import Node,Stack,Peudo
 
 
 
