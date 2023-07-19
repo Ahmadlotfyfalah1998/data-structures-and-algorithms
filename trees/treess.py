@@ -167,7 +167,6 @@ class Tree:
      return output    
    def post_order(self):
        
-       
     """
       post_order travers the tree left >> right >> root
     """    
@@ -217,8 +216,12 @@ class Tree:
                max_tnode=x
        return max_tnode
               
-  
-       
+   def sum_of_odd(self):
+       sum_=0
+       for x in self.pre_order():
+           if x%2 ==1:
+             sum_+=x  
+       return sum_
 class Binary_search(Tree):
     
     
@@ -259,31 +262,40 @@ class Binary_search(Tree):
             return False
 if __name__=='__main__':
  treee = Tree()
- treee.root=Tnode('root')
- treee.root.left=Tnode('left')
- treee.root.right=Tnode('right')
- treee.root.left.left=Tnode('left,left')
- treee.root.left.right=Tnode('left,right')
- treee.root.right.left=Tnode('right,left')
- treee.root.right.right=Tnode('right,right')
- print(treee.pre_order())
- print(treee.in_order())
- print(treee.post_order())
+ treee.root=Tnode(8)
+ treee.root.left=Tnode(3)
+ treee.root.right=Tnode(10)
+ treee.root.left.left=Tnode(1)
+ treee.root.left.right=Tnode(14)
+ treee.root.right.left=Tnode(1)
+ treee.root.right.right=Tnode(7)
+#  print(treee.pre_order())
+#  print(treee.in_order())
+#  print(treee.post_order())
+print(treee.sum_of_odd())
 
- binary=Binary_search()
- binary.add(20)
- binary.add(2)
- binary.add(5)
- binary.add(15)
- binary.add(3)
- binary.add(2)
- binary.add(4)
- print(binary.in_order())
- print(binary.contains(3))
- print(binary.contains(7))
- print(binary.contains(2))
- print(binary.contains(10))
- print(binary.contains(300))
- print(binary.contains(8))
+
+
+
+
+
+
+#  binary=Binary_search()
+#  binary.add(20)
+#  binary.add(2)
+#  binary.add(5)
+#  binary.add(15)
+#  binary.add(3)
+#  binary.add(2)
+#  binary.add(4)
  
- print(binary.max_tree())
+ 
+#  print(binary.in_order())
+#  print(binary.contains(3))
+#  print(binary.contains(7))
+#  print(binary.contains(2))
+#  print(binary.contains(10))
+#  print(binary.contains(300))
+#  print(binary.contains(8))
+ 
+#  print(binary.max_tree())

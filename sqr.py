@@ -1,96 +1,128 @@
-# class Node :
-#     def __init__(self,value=None,next=None):
-#         self.value= value 
-#         self.next =next 
-# class Stack:
-#     def __init__(self,top=None):
-#        self.top = top 
-         
-         
-#     def push(self,value):
-#       node=Node(value)
-#       if self.top is None:
-#           self.top=node   
-#       else:    
-#         node.next=self.top
-#         self.top=node 
+class Tnode:
+    """
+    this is the tree nodes it have left and right
+    """
+    def __init__(self,value):
+        self.value = value
+        self.right=None
+        self.left=None
+               
+class Tree:
+   """
+   this is tree class you can create tree with a root and left and right t node 
+   and there is three methods to traverse the tree 
+   1.pre_order
+   2.post_order 
+   3.in_order
+   """
+   def __init__(self):
+       self.root=None
+       
+   def pre_order(self):
+      """
+      pre_order travers the tree root >> left >> right
+      """
+      if self.root is None:
+       return None   
+      else: 
+       output=[]
+       def _helper(root):
+           output.append(root.value)
+           if root.left:
+               _helper(root.left)
+           if root.right:
+               _helper(root.right)
+       _helper(self.root)
+       return output
+              
+
+   def in_order(self):
+    """
+      in_order travers the tree left >> root >> right
+    """    
+    if self.root is None:
+     return None   
+    else:       
+     output=[]   
+     def _helper(root):
         
-#     def pop(self):
-#          if self.top is None:
-#              raise TypeError ('the stack is empty')
-#          else:       
-#              node = self.top
-#              self.top=node.next
-#              node.next=None
+         if root.left:
+             _helper(root.left)
+            
+         output.append(root.value)    
+         if root.right:
+             _helper(root.right)
+     _helper(self.root)
+     return output    
+   def post_order(self):
+       
+       
+    """
+      post_order travers the tree left >> right >> root
+    """    
+    if self.root is None:
+       return None   
+    else:    
+       output=[]
+       def _helper(root):
+        
+          if root.left:
+            _helper(root.left)
+            
              
-#              return node.value
-         
-         
-#     def peek (self):
-#          if self.top is None:
-#              raise TypeError('the stack is empty')
-#          else:       
-#              return self.top.value
-    
-    
-#     def is_empty (self):
-#           if self.top is None:
-#              return True
-#           else:       
-#              return False
-         
-#     def __str__(self):
-#         current=self.top
-#         while current:
-#           print (current.value)
-#           current = current.next
-          
-          
-#     def to_string(self):
-#         current=self.top
-#         string=""
-#         if current:
-#          while current:
-#           string+=f"{{{current.value}}} -> "   
-#           current=current.next
-        
-#         string+='None'  
-#         return string       
+          if root.right:
+            _helper(root.right)
             
-            
-            
-#     def getMax(self):
-#         biggest=self.top
-#         current=self.top
-#         while current:
-#           if current.value >  biggest.value:
-#               biggest=current
-#           current=current.next   
-#         return biggest.value
-    
-    
-    
-    
-# if __name__=='__main__':
-#  first=Stack()
-#  first.push(9)
-#  first.push(100)
-#  first.push(60)
-#  first.push(8)
-#  first.push(3)
-#  print( first.to_string())
-#  print(first.getMax())
-# x='asdfdgh'
-# arr=[]
-# for o in x  :
-#  arr.append(o)
+          output.append(root.value) 
+       _helper(self.root)      
+       return output
+
+
+
+
+
+
+
  
-# print(arr)
-def validate_brackets( string):
-        arr=[]
-        for x in string:
-            if x=='{'or  x=='}'or x=='['or  x==']'or x=='('or  x==')':
-                arr.append(x)
-        return arr
-    
-print(validate_brackets('qwr(jt[g])-}--{{{{}}}'))
+
+
+   def compare(self,tree2):
+           arr1=self.pre_order()
+           arr2=tree2.pre_order()
+           counter1=0
+           counter2=0
+           for x in arr1:
+                   if x != 'folder' :
+                      counter1+=1
+           for x in arr2:
+                   if x != 'folder' :
+                           counter2+=1
+           if counter1 != counter2 :
+                   return False
+           else:
+                   return True                                       
+           
+
+if __name__=='__main__':
+  treee = Tree()
+  treee.root=Tnode('folder')
+  treee.root.left=Tnode('folder')
+  treee.root.right=Tnode('folder')
+  treee.root.left.left=Tnode('.js')
+  treee.root.left.right=Tnode('.py')
+  treee.root.right.left=Tnode('.py')
+  treee.root.right.right=Tnode('.css')
+  
+#  print(treee.in_order())
+#  print(treee.post_order())
+  treee2 = Tree()
+  treee2.root=Tnode('folder')
+  treee2.root.left=Tnode('folder')
+  treee2.root.right=Tnode('folder')
+  treee2.root.left.left=Tnode('.js')
+  
+  treee2.root.right.left=Tnode('.py')
+  treee2.root.right.right=Tnode('.css')
+ 
+  print(treee.compare(treee2))
+  print(treee2.pre_order())
