@@ -13,3 +13,5 @@
 |code challenge 13    |[link13](./brackets_stack/brackets.md)|
 |code challenge 15    |[link15](./trees/trees.md)|
 |code challenge 16    |[link16](./trees/tree_max.md)|
+|code challenge 31    |[link31](./hash_repeted/hash.md)|
+
