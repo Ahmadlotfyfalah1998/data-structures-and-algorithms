@@ -13,3 +13,7 @@ def insertion_sort(input):
 input_array = [5, 2, 9,0,22,99 ,44,2, 1, 3]
 sorted_array = insertion_sort(input_array)
 print(sorted_array) 
+
+# i=[1,2,3]
+# i.insert(1,7)
+# print(i)
